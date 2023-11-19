@@ -4,9 +4,9 @@
 
 This Python app automates the process of finding budget-friendly flights. It utilizes the Sheety API to fetch user-defined price thresholds from Google Sheets and the Tequila Kiwi API for real-time flight price tracking. When flight prices fall below these thresholds, the app sends instant email notifications via smtplib. Designed for simplicity and efficiency, it's an essential tool for cost-conscious travelers.
 
-## config.py File Set-Up:
+## config.py Set-Up:
 
-![](/config_py.png)
+![](/config-py.png)
 
 ## Installation Guide:
 
