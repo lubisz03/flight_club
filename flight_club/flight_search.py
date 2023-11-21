@@ -5,7 +5,8 @@ from flight_data import FlightData
 
 class FlightSearch:
 
-    def get_destination_code(self, city_name):
+    @staticmethod
+    def get_destination_code(city_name):
         location_endpoint = f"{KIWI_ENDPOINT}/locations/query"
         headers = {"apikey": KIWI_API_KEY}
         query = {"term": city_name, "location_types": "city"}
@@ -15,7 +16,8 @@ class FlightSearch:
         code = results[0]["code"]
         return code
 
-    def check_flights(self, origin_city_code, destination_city_code, from_time, to_time):
+    @staticmethod
+    def check_flights(origin_city_code, destination_city_code, from_time, to_time):
         headers = {"apikey": KIWI_API_KEY}
         query = {
             "fly_from": origin_city_code,
