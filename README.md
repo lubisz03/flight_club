@@ -6,7 +6,11 @@ This Python app automates the process of finding budget-friendly flights. It uti
 
 ## config.py Set-Up:
 
-![](/config-py.png)
+![](/screenshots/config-py.png)
+
+## Example Google Sheet:
+
+![](/screenshots/example-google-sheet.png)
 
 ## Installation Guide:
 
