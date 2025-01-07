@@ -1,5 +1,6 @@
 from config import SHEETY_ENDPOINT
 import requests
+from datetime import datetime
 
 
 class DataManager:
@@ -25,3 +26,6 @@ class DataManager:
                 json=new_data
             )
             print(response.text)
+
+    def convert_date(self, date):
+        return datetime.strptime(date, "%d/%m/%Y")

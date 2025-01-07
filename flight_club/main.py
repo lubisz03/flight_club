@@ -15,15 +15,18 @@ def main():
         data_manager.destination_data = sheet_data
         data_manager.update_destination_codes()
 
-    tomorrow = datetime.now() + timedelta(days=1)
-    six_month_from_today = datetime.now() + timedelta(days=(6 * 30))
+    from_time = datetime(2025, 4, 28)
+    to_time = datetime(2025, 4, 30)
 
     for destination in sheet_data:
+        print(destination)
         flight = FlightSearch.check_flights(
             ORIGIN_CITY_IATA,
             destination["iataCode"],
-            from_time=tomorrow,
-            to_time=six_month_from_today
+            from_time=data_manager.convert_date(destination['from']),
+            to_time=data_manager.convert_date(destination['to']),
+            min_days=destination["minLength"],
+            max_days=destination["maxLength"]
         )
         if flight.price < destination["lowestPrice"]:
             NotificationManager.send_email(flight)
